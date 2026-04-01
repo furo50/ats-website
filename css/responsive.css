@@ -1,0 +1,103 @@
+/* ========================
+   RESPONSIVE / MOBILE
+======================== */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: var(--transition);
+        box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        color: var(--dark) !important;
+        font-size: 1.1rem;
+    }
+
+    .nav-burger {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .nav-burger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-burger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-title {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+    }
+
+    /* LEISTUNGEN */
+    .leistungen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ÜBER UNS */
+    .ueber-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ueber-stats {
+        gap: 1.5rem;
+    }
+
+    .image-placeholder::before,
+    .image-placeholder::after {
+        display: none;
+    }
+
+    /* KONTAKT */
+    .kontakt-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}

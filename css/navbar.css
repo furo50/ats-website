@@ -1,0 +1,100 @@
+/* ========================
+   NAVBAR
+======================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 0.6rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Logo weiß wenn Navbar transparent (auf Hero) */
+.navbar:not(.scrolled) .logo-img {
+    filter: invert(1) brightness(2);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.navbar.scrolled .nav-links a {
+    color: var(--dark);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-cta {
+    background: var(--primary);
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 4px;
+    transition: var(--transition) !important;
+}
+
+.nav-cta:hover {
+    background: var(--primary-dark) !important;
+    color: var(--white) !important;
+}
+
+.nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-burger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.navbar.scrolled .nav-burger span {
+    background: var(--dark);
+}
