@@ -91,13 +91,14 @@
 
 .leistung-item {
     display: grid;
-    grid-template-columns: 80px 1fr auto auto;
+    grid-template-columns: 80px 1fr auto;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid #e2e8f0;
     cursor: pointer;
     transition: var(--transition);
+    border-radius: 12px;
     opacity: 0;
     transform: translateY(20px);
 }
@@ -107,18 +108,33 @@
     transform: translateY(0);
 }
 
-.leistung-item:hover {
-    padding-left: 1rem;
+.leistung-item.active {
+    background: var(--dark);
+    border-color: transparent;
+    margin: 0.5rem 0;
 }
 
-.leistung-item:hover .leistung-nr {
+.leistung-item.active .leistung-nr {
     color: var(--primary);
 }
 
-.leistung-item:hover .leistung-arrow {
+.leistung-item.active h3 {
+    color: var(--white);
+}
+
+.leistung-item.active .leistung-desc {
+    color: rgba(255,255,255,0.6);
+    max-height: 60px;
+}
+
+.leistung-item.active .leistung-arrow {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
+}
+
+.leistung-item:not(.active):hover {
+    background: var(--light-gray);
 }
 
 .leistung-nr {
@@ -129,20 +145,24 @@
     transition: var(--transition);
 }
 
-.leistung-item h3 {
+.leistung-content h3 {
     font-family: var(--font-display);
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     font-weight: 700;
     color: var(--dark);
     text-transform: uppercase;
     letter-spacing: 0.01em;
+    transition: var(--transition);
 }
 
 .leistung-desc {
     font-size: 0.9rem;
     color: var(--gray);
-    max-width: 300px;
     line-height: 1.6;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 0.3rem;
 }
 
 .leistung-arrow {
@@ -253,6 +273,12 @@
     color: var(--gray);
     line-height: 1.7;
     font-size: 0.95rem;
+}
+
+.ueber-card--light h3,
+.ueber-card--dark h3 {
+    word-break: break-word;
+    hyphens: auto;
 }
 
 .ueber-stats {

@@ -19,9 +19,12 @@
         border-radius: 0;
         border: none;
         backdrop-filter: none;
-        transition: var(--transition);
+        transition: right 0.3s ease;
         box-shadow: -8px 0 40px rgba(0,0,0,0.15);
         z-index: 999;
+        transform: none;
+        left: auto;
+        padding: 2rem;
     }
 
     .nav-links.open {
@@ -33,6 +36,11 @@
         font-size: 1.1rem;
         width: 100%;
         text-align: center;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .nav-cta-btn {
+        display: none;
     }
 
     .nav-burger {
@@ -80,10 +88,11 @@
     .leistung-item {
         grid-template-columns: 50px 1fr auto;
         gap: 1rem;
+        padding: 1.2rem 1rem;
     }
 
     .leistung-desc {
-        display: none;
+        font-size: 0.85rem;
     }
 
     /* ÜBER UNS */

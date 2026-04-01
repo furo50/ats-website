@@ -112,3 +112,29 @@ form.addEventListener('submit', (e) => {
             }, 3000);
         });
 });
+
+// ========================
+// LEISTUNGEN ACCORDION
+// ========================
+
+const leistungItems = document.querySelectorAll('.leistung-item');
+
+leistungItems.forEach(item => {
+    item.addEventListener('click', () => {
+        leistungItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+    });
+});
+
+// ========================
+// NAVBAR ACTIVE LINK
+// ========================
+
+const navLinks2 = document.querySelectorAll('.nav-links a');
+
+navLinks2.forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks2.forEach(l => l.classList.remove('nav-active'));
+        link.classList.add('nav-active');
+    });
+});
