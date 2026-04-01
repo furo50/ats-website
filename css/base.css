@@ -9,18 +9,18 @@
 }
 
 :root {
-   --primary: #d4a017;
---primary-dark: #b8860b;
---dark: #0a0a0a;
---dark-2: #141414;
-    --gray: #555555;
-    --light-gray: #f5f5f5;
+    --primary: #f97316;
+    --primary-dark: #ea6c0a;
+    --dark: #0f172a;
+    --dark-2: #1e293b;
+    --gray: #64748b;
+    --light-gray: #f1f5f9;
     --white: #ffffff;
     --font-display: 'Barlow Condensed', sans-serif;
     --font-body: 'Barlow', sans-serif;
     --transition: all 0.3s ease;
-    --shadow: 0 4px 24px rgba(0,0,0,0.10);
-    --shadow-strong: 0 8px 40px rgba(0,0,0,0.18);
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --shadow-strong: 0 8px 40px rgba(0,0,0,0.12);
 }
 
 html {

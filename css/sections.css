@@ -1,11 +1,6 @@
 /* ========================
-   LEISTUNGEN
+   SECTION BASICS
 ======================== */
-
-.leistungen {
-    padding: 7rem 0;
-    background: var(--white);
-}
 
 .section-header {
     text-align: center;
@@ -27,58 +22,141 @@
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    text-transform: uppercase;
     color: var(--dark);
     letter-spacing: -0.01em;
 }
 
-.leistungen-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+/* ========================
+   LEISTUNGEN
+======================== */
+
+.leistungen {
+    padding: 7rem 0;
+    background: var(--white);
 }
 
-.leistung-card {
-    background: var(--light-gray);
-    border-radius: 8px;
-    padding: 2.5rem 2rem;
-    border-bottom: 3px solid transparent;
+.leistungen-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+}
+
+.leistungen-left .section-tag {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.leistungen-left .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    text-transform: none;
+}
+
+.leistungen-left .section-title span {
+    color: var(--primary);
+}
+
+.leistungen-right p {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--dark);
+    border: 2px solid var(--dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.leistungen-list {
+    border-top: 1px solid #e2e8f0;
+}
+
+.leistung-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
     transition: var(--transition);
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
 }
 
-.leistung-card.visible {
+.leistung-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.leistung-card:hover {
-    background: var(--white);
-    border-bottom-color: var(--primary);
-    box-shadow: var(--shadow-strong);
-    transform: translateY(-6px);
+.leistung-item:hover {
+    padding-left: 1rem;
 }
 
-.card-icon {
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
+.leistung-item:hover .leistung-nr {
+    color: var(--primary);
 }
 
-.leistung-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
+.leistung-item:hover .leistung-arrow {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.leistung-nr {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
     font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.02em;
+    color: var(--gray);
+    transition: var(--transition);
 }
 
-.leistung-card p {
-    font-size: 0.95rem;
+.leistung-item h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.leistung-desc {
+    font-size: 0.9rem;
     color: var(--gray);
-    line-height: 1.7;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+.leistung-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--dark);
+    transition: var(--transition);
+    flex-shrink: 0;
 }
 
 /* ========================
@@ -87,49 +165,115 @@
 
 .ueber-uns {
     padding: 7rem 0;
-    background: var(--dark);
+    background: var(--light-gray);
+}
+
+.ueber-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ueber-header .section-tag {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.ueber-header .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: none;
+    line-height: 1.1;
+}
+
+.ueber-header .section-title span {
+    color: var(--primary);
 }
 
 .ueber-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
-.ueber-text .section-tag {
-    color: var(--primary);
+.ueber-card {
+    border-radius: 16px;
+    padding: 2.5rem;
+    overflow: hidden;
 }
 
-.ueber-text .section-title {
+.ueber-card--dark {
+    background: var(--dark);
     color: var(--white);
-    margin-bottom: 1.5rem;
 }
 
-.ueber-text p {
+.ueber-card--dark h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.ueber-card--dark p {
     color: rgba(255,255,255,0.65);
-    line-height: 1.8;
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.ueber-card--image {
+    padding: 0;
+    position: relative;
+    min-height: 350px;
+}
+
+.ueber-card--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.ueber-card--light {
+    background: var(--white);
+}
+
+.ueber-card--light h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.ueber-card--light p {
+    color: var(--gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
 }
 
 .ueber-stats {
     display: flex;
-    gap: 2.5rem;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    gap: 3rem;
+    justify-content: center;
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 16px;
 }
 
 .stat {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.3rem;
 }
 
 .stat-number {
     font-family: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
     color: var(--primary);
     line-height: 1;
@@ -140,59 +284,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-}
-
-.ueber-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.ueber-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.image-placeholder {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: var(--dark-2);
-    border-radius: 8px;
-    border: 2px dashed rgba(255,255,255,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.2);
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.image-placeholder::before {
-    content: '';
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    width: 60%;
-    height: 60%;
-    border-top: 3px solid var(--primary);
-    border-left: 3px solid var(--primary);
-    border-radius: 4px 0 0 0;
-}
-
-.image-placeholder::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    right: -1rem;
-    width: 60%;
-    height: 60%;
-    border-bottom: 3px solid var(--primary);
-    border-right: 3px solid var(--primary);
-    border-radius: 0 0 4px 0;
+    color: var(--gray);
 }
 
 /* ========================
@@ -201,38 +293,81 @@
 
 .kontakt {
     padding: 7rem 0;
-    background: var(--light-gray);
+    background: var(--white);
 }
 
-.kontakt-grid {
+.kontakt-inner {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
     align-items: start;
 }
 
-.kontakt-info h3 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark);
-    margin-bottom: 2rem;
-    letter-spacing: 0.02em;
+.kontakt-info .section-tag {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.kontakt-info .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    text-transform: none;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+}
+
+.kontakt-info .section-title span {
+    color: var(--primary);
+}
+
+.kontakt-sub {
+    color: var(--gray);
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+.kontakt-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 .kontakt-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 1.2rem;
-    color: var(--gray);
-    font-size: 0.95rem;
-    line-height: 1.6;
 }
 
-.kontakt-item a {
+.kontakt-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.kontakt-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.kontakt-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--gray);
+}
+
+.kontakt-item span,
+.kontakt-item a {
+    font-size: 0.95rem;
+    color: var(--dark);
     transition: var(--transition);
 }
 
@@ -240,16 +375,13 @@
     color: var(--primary);
 }
 
-.kontakt-icon {
-    font-size: 1.1rem;
-    margin-top: 0.1rem;
-    flex-shrink: 0;
-}
-
 .kontakt-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    background: var(--light-gray);
+    padding: 2.5rem;
+    border-radius: 16px;
 }
 
 .form-group {
@@ -263,7 +395,7 @@
     width: 100%;
     padding: 0.9rem 1.2rem;
     border: 2px solid transparent;
-    border-radius: 4px;
+    border-radius: 10px;
     background: var(--white);
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -280,7 +412,7 @@
 .kontakt-form input:focus,
 .kontakt-form textarea:focus {
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(204,0,0,0.08);
+    box-shadow: 0 0 0 4px rgba(249,115,22,0.08);
 }
 
 .kontakt-form textarea {
@@ -291,5 +423,4 @@
 .kontakt-form .btn-primary {
     align-self: flex-start;
     border: none;
-    font-family: var(--font-body);
 }

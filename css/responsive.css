@@ -15,7 +15,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 0.5rem;
+        border-radius: 0;
+        border: none;
+        backdrop-filter: none;
         transition: var(--transition);
         box-shadow: -8px 0 40px rgba(0,0,0,0.15);
         z-index: 999;
@@ -28,6 +31,8 @@
     .nav-links a {
         color: var(--dark) !important;
         font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-burger {
@@ -53,7 +58,7 @@
     }
 
     .hero-title {
-        font-size: clamp(2.8rem, 12vw, 4rem);
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
     }
 
     .hero-btns {
@@ -63,30 +68,41 @@
     .btn-primary,
     .btn-secondary {
         text-align: center;
+        justify-content: center;
     }
 
     /* LEISTUNGEN */
-    .leistungen-grid {
+    .leistungen-header {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .leistung-item {
+        grid-template-columns: 50px 1fr auto;
+        gap: 1rem;
+    }
+
+    .leistung-desc {
+        display: none;
     }
 
     /* ÜBER UNS */
     .ueber-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+    }
+
+    .ueber-card--image {
+        min-height: 250px;
     }
 
     .ueber-stats {
         gap: 1.5rem;
-    }
-
-    .image-placeholder::before,
-    .image-placeholder::after {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     /* KONTAKT */
-    .kontakt-grid {
+    .kontakt-inner {
         grid-template-columns: 1fr;
         gap: 3rem;
     }

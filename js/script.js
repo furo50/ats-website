@@ -35,8 +35,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 // SCROLL ANIMATIONEN
 // ========================
 
-const animateElements = document.querySelectorAll('.leistung-card, .ueber-text, .ueber-image, .kontakt-info, .kontakt-form');
-
+const animateElements = document.querySelectorAll('.leistung-item, .ueber-card, .kontakt-info, .kontakt-form');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
